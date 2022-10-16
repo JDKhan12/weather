@@ -1,0 +1,302 @@
+@charset "utf-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain) ============================================ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix ========================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/* for wrapper */
+.wrapper {
+  max-width: 1520px;
+  width: 86%; 
+  margin: 0 auto;
+}
+  
+
+/*=================================
+  main styling starts here
+=================================*/
+
+.weather-api-section .wrapper { width: 100%; }
+
+.backgorund-image {
+  background-color: rgb(196, 227, 237);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  filter: blur(10px);
+}
+
+.main-content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  padding: 0 0 30px;
+  color: #fff;
+  font-size: 26px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px rgb(32, 32, 32);
+}
+
+.form { margin: 0 0 30px; }
+
+.input-search {
+  padding: 20px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 20px;
+  background-color: inherit;
+  outline: none;
+  position: relative;
+  color: #fff;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 40%);
+}
+
+.input-search::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: inherit;
+  filter: blur(10px);
+}
+
+.input-search::placeholder { 
+  color: #fff;
+  opacity: 75%;
+}
+
+.not-found {
+  padding: 30px 50px;
+  border-radius: 10px;
+  margin-top: 50px;
+  position: relative;
+  display: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 10%);
+}
+
+.not-found::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: inherit;
+  filter: blur(10px);
+
+}
+
+.not-found h2 {
+  color: #fff;
+  font-size: 32px;
+  text-transform: capitalize;
+}
+
+.weather-container {
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  box-shadow: 1px 1px 50px rgba(0, 0, 0, 50%);
+}
+
+.weather-data {
+  flex-basis: 65%;
+  padding: 180px 40px 30px 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.degre { font-size: 68px; }
+.data { margin-right: 10px; }
+
+.data h2 { 
+  font-size: 22px; 
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.date { font-size: 14px; }
+.weather figure img { height: 100%; }
+figcaption {   margin: 0 0 25px; }
+.weather-name { text-transform: capitalize; }
+
+.weather figure { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+
+.weather-details {
+  padding: 30px;
+	position: relative;
+	z-index: 1;
+  width: 100%;
+  flex-basis: 35%;
+	background: inherit;
+  background-position: right;
+  background-size: cover;
+	overflow: hidden;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.weather-details:before {
+  content: "";
+	position: absolute;
+	background: inherit;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	box-shadow: inset 0 0 200px rgba(255, 255, 255, .2);
+	filter: blur(15px);
+	margin: -20px;
+}
+
+h3 {
+  margin: 20px 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.details {
+  padding: 10px 0;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
+}
+
+.detail {
+  width: 100%;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail span { display: block; }
+
+/*=================================
+  main styling ends here
+=================================*/
+
+
+/*media query starts*/
+/*media query for 995px starts here*/
+@media only screen and (max-width: 995px) {}  
